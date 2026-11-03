@@ -154,7 +154,7 @@ nav button.on{color:var(--brand);font-weight:700}
 const API_URL = "https://script.google.com/macros/s/AKfycbwQTDst4mam4YwSYadIwpxQk3X0igCWV0oAGChDHJkTK_J1juxnoifZbfE6nD0sv4zCcw/exec";
 
 // Nama anggota rumah yang mencatat
-const ANGGOTA = ["Ulfa", "Fafa"];
+const ANGGOTA = ["Ulin", "Fafa"];
 
 // Daftar barang. "min" = batas stok menipis (stok ≤ min muncul di daftar belanja).
 const KATEGORI = [
@@ -194,7 +194,7 @@ const fmtTgl = s => { const d = new Date(String(s).slice(0,10) + "T00:00"); retu
 const DEMO = !API_URL;
 
 let tx = [];
-let user = store.get("inv_user") || ANGGOTA[0];
+let user = ANGGOTA.includes(store.get("inv_user")) ? store.get("inv_user") : ANGGOTA[0];
 let pin = store.get("inv_pin") || "";
 let mode = "masuk";
 let rFilter = "semua";
